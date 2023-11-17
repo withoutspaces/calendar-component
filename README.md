@@ -12,3 +12,5 @@ $ cd calendar-component
 $ yarn 
 $ yarn run dev
 ```
+
+<img src="https://github.com/withoutspaces/calendar-component/blob/main/src/demo/demo.png"/>
