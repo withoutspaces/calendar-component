@@ -1,13 +1,11 @@
-import CalendarButton from "./calendarButton";
-import CalendarSpaces from "./calendarSpaces";
+import CalendarButton from "./components/CalendarButton/index.tsx";
+import CalendarSpaces from "./components/CalendarSpaces/index.tsx";
+import DaysOfTheWeek from "./components/DaysOfTheWeek/index.tsx";
 
-import { CalendarContainer, Title } from "../App.styles";
-import { calendar } from "./mocks/calendar";
-import DaysOfTheWeek from "./daysOfTheWeek";
+import { CalendarContainer, Title } from "../../App.styles.ts";
+import { calendar } from "../../mocks/calendar.ts";
+import { CalendarProps } from "./types.ts";
 
-interface CalendarProps {
-  monthId: number;
-}
 
 export default function Calendar({ monthId }: CalendarProps) {
   const months = calendar.filter((month) => month.monthNumber === monthId)[0];

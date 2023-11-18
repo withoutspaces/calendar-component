@@ -1,4 +1,4 @@
-import { Space } from "../App.styles";
+import { Space } from "../../../../App.styles";
 
 
 export default function CalendarSpaces() { 

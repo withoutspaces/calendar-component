@@ -1,4 +1,4 @@
-import { DaysOfTheWeekContainer } from "../App.styles";
+import { DaysOfTheWeekContainer } from "../../../../App.styles";
 
 export default function DaysOfTheWeek() {
   return (
