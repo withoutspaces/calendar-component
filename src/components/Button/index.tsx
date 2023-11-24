@@ -1,4 +1,4 @@
-import { GeneralButton } from "../../App.styles";
+import { GeneralButton } from "./styles";
 import { ButtonProps } from "./types";
 
 export default function Button({children, onClick}: ButtonProps) {

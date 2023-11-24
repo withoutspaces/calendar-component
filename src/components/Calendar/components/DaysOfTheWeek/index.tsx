@@ -1,5 +1,4 @@
-import { DaysOfTheWeekContainer } from "../../../../App.styles";
-
+import styled from "styled-components";
 export default function DaysOfTheWeek() {
   return (
       <DaysOfTheWeekContainer>
@@ -13,3 +12,13 @@ export default function DaysOfTheWeek() {
       </DaysOfTheWeekContainer>
    );
 }
+
+const DaysOfTheWeekContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 62px;
+    margin-bottom: 12px;
+
+`

@@ -1,4 +1,4 @@
-import { Space } from "../../../../App.styles";
+import styled from "styled-components";
 
 
 export default function CalendarSpaces() { 
@@ -8,3 +8,11 @@ export default function CalendarSpaces() {
     <Space></Space>
    );
 }
+
+const Space =styled.div`
+    width: 32px;
+    height: 32px;
+    visibility: hidden;
+    /* background-color: red; */
+    /* opacity: 0; */
+`
