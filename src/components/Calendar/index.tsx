@@ -6,8 +6,16 @@ import { calendar } from "../../mocks/calendar.ts";
 import { CalendarProps } from "./types.ts";
 
 
-export default function Calendar({ monthId, daysWithEvents }: CalendarProps) {
+export default function Calendar({ monthId, daysWithEvents, eventsData, setSelectedDate }: CalendarProps) {
   const months = calendar.filter((month) => month.monthNumber === monthId)[0];
+
+  function handleEventButton(currentDate: string) {
+    if(daysWithEvents?.includes(currentDate)) {
+      const showEvents = eventsData.filter((event) => event.date === currentDate)
+      console.log(showEvents);
+    }
+    setSelectedDate(currentDate)
+  }
 
   return (
     <Container>
@@ -28,7 +36,7 @@ export default function Calendar({ monthId, daysWithEvents }: CalendarProps) {
             const { firstDay } = months;
             return Array.from({ length: firstDay }, () => <CalendarSpaces />);
           }
-          return <CalendarButton name={day} hasEvent={hasEvent} />;
+          return <CalendarButton name={day} hasEvent={hasEvent} onClick={() => handleEventButton(currentDate)}/>;
         })}
       </CalendarContainer>
     </Container>
