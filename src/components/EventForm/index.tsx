@@ -2,9 +2,11 @@ import { FormEvent } from "react";
 import { GeneralButton } from "../Button/styles";
 import { Form, Input } from "./styles";
 import { EventFormProps } from "./types";
-import { IEvents } from "../../@types/events";
 
-export default function EventForm({setEvent}: EventFormProps) {
+
+export default function EventForm({setEvent, selectedDate}: EventFormProps) {
+
+
 
   function handleFormSubmmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()    
@@ -13,7 +15,7 @@ export default function EventForm({setEvent}: EventFormProps) {
     const date = formData.get('date') as string
     const description = formData.get('description') as string
 
-    const newEvent: IEvents = {name, date, description}
+    const newEvent = {name, date, description}
 
     setEvent(prev => [...prev, newEvent])
   }
@@ -26,7 +28,7 @@ export default function EventForm({setEvent}: EventFormProps) {
         </Input>         
         <Input>
             <label htmlFor="date">Data</label>
-            <input type="date" name="date" id="date" required/>
+            <input type="date" name="date" id="date" required value={selectedDate}/>
         </Input> 
         <Input>
             <label htmlFor="description">Descrição</label>
